@@ -26,10 +26,9 @@ def summ(*args):
             for j in i:
                 total += summ(j)
 
-    return total  # Добавляем возврат суммы
+    return total  
 
-
-# Пример данных
+ 
 data_structure = [
     [1, 2, 3],
     {'a': 4, 'b': 5},
@@ -39,4 +38,4 @@ data_structure = [
 ]
 
 result = summ(*data_structure)
-print(result)  # Ожидаемый результат: 101
+print(result)   
