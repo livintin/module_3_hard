@@ -1,34 +1,33 @@
 def summ(*args):
     total = 0
-
     for i in args:
-        if type(i) == int:
+        if isinstance(i, int):
             total += i
-        if type(i) == str:
+        if isinstance(i, str):
             total += len(i)
-        if type(i) == dict:
+        if isinstance(i, dict):
             for key, value in i.items():
-                if type(key) == int:
+                if isinstance(key, int):
                     total += key
-                elif type(key) == str:
+                elif isinstance(key, str):
                     total += len(key)
-                if type(value) == int:
+                if isinstance(value, int):
                     total += value
-                elif type(value) == str:
+                elif isinstance(value, str):
                     total += len(value)
-        if type(i) == tuple:
+        if isinstance(i, tuple):
             for j in i:
                 total += summ(j)
-        if type(i) == set:
+        if isinstance(i, set):
             for j in i:
                 total += summ(j)
-        if type(i) == list:
+        if isinstance(i, list):
             for j in i:
                 total += summ(j)
 
-    return total  
+    return total
 
- 
+
 data_structure = [
     [1, 2, 3],
     {'a': 4, 'b': 5},
@@ -38,4 +37,4 @@ data_structure = [
 ]
 
 result = summ(*data_structure)
-print(result)   
+print(result)
