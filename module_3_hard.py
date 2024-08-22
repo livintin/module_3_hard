@@ -6,24 +6,13 @@ def summ(*args):
         if isinstance(i, str):
             total += len(i)
         if isinstance(i, dict):
-            for key, value in i.items():
-                if isinstance(key, int):
-                    total += key
-                elif isinstance(key, str):
-                    total += len(key)
-                if isinstance(value, int):
-                    total += value
-                elif isinstance(value, str):
-                    total += len(value)
+            total += summ(*i.items())
         if isinstance(i, tuple):
-            for j in i:
-                total += summ(j)
+            total += summ(*i)
         if isinstance(i, set):
-            for j in i:
-                total += summ(j)
+            total += summ(*i)
         if isinstance(i, list):
-            for j in i:
-                total += summ(j)
+            total += summ(*i)
 
     return total
 
